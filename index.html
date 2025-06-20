@@ -1,59 +1,207 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>HIPPEROSE's CLOTHES </title>
-    <link rel="stylesheet" href="styles.css"> <!--liên kết một tệp CSS (Cascading Style Sheets) vào tài liệu HTML-->
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HIPPEROSE's CLOTHES</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>HIPPEROSE</h1>
-    </header>
-    <section class="products">
-        <div class="product">
-            <img src="images/a.webp" alt="Quần Wide-leg Balloon Jeans ống rộng StreetStyle">
-            <h3>Quần Wide-leg Balloon Jeans ống rộng StreetStyle</h3>
-            <p>Giá: xxxxxxđ</p>
-        </div>
+    <!-- MENU 3 GẠCH -->
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="menu-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+  <nav class="menu">
+    <label for="menu-toggle" class="close-icon">✕</label>
+    <a href="#quan">Quần, Váy </a>
+    <a href="#ao">Áo</a>
+    <a href="#phukien">Phụ kiện</a>
+    <a href="#lienhe">Liên hệ</a>
+  </nav>
+  <!-- HEADER -->
+  <header>
+  <div class="logo-container">
+    <img src="images/logo.png" alt="Logo HIPPEROSE" class="logo1">
+    <img src="images/tenlogo.jpg" alt="Logo HIPPEROSE" class="logo2">
+   
+  </div>
+  <div id="logo-hoa">
+    <img src="images/logo.png" alt="logo" />
+  </div>
 
-        <div class="product">
-            <img src="images/b.webp" alt="Quần Wide-legs CATUS Kaki Jeans ống rộng StreetStyle">
-            <h3>Quần Wide-legs CATUS Kaki Jeans ống rộng StreetStyle</h3>
-            <p>Giá: xxxxxxđ</p>
-        </div>
+  </header>
+ 
+  <!-- SẢN PHẨM: QUẦN -->
+  <section class="sanpham" id="quan">
+    <h2>Quần, Váy</h2>
+    <div class="sp">
+      <div class="sp-image">
+        <img src="images/quan1.jpg" alt="FRISSON JEANS">
+      </div>
+      <h3>FRISSON JEANS</h3>
+      <p>Giá: 1.400.000đ</p>
+      <button class="mua-btn">Mua ngay</button>
+      <button class="giohang-btn">Thêm vào giỏ</button>
+    </div>
+    <div class="sp">
+      <div class="sp-image">
+        <img src="images/quan2.jpg" alt="T-CBB CAMO PANTS">
+      </div>
+      <h3>T-CBB CAMO PANTS</h3>
+      <p>Giá: 1.500.000đ</p>
+      <button class="mua-btn">Mua ngay</button>
+      <button class="giohang-btn">Thêm vào giỏ</button>
+    </div>
+    <div class="sp">
+      <div class="sp-image">
+        <img src="images/vay1.jpg" alt="WRAP CAMOUFLAGEDX SKIRT">
+      </div>
+      <h3>WRAP CAMOUFLAGEDX SKIRT</h3>
+      <p>Giá: 850.000đ</p>
+      <button class="mua-btn">Mua ngay</button>
+      <button class="giohang-btn">Thêm vào giỏ</button>
+    </div>
+     <div class="sp">
+      <div class="sp-image">
+        <img src="images/quan3.jpg" alt="UNCUT FERAL JEANS">
+      </div>
+      <h3>UNCUT FERAL JEANS</h3>
+      <p>Giá: 2.000.000đ</p>
+      <button class="mua-btn">Mua ngay</button>
+      <button class="giohang-btn">Thêm vào giỏ</button>
+    </div>
+    <!-- Thêm sản phẩm khác tương tự -->
+  </section>
 
-         <div class="product">
-            <img src="images/c.webp" alt="Quần Kaki Wide-leg SIMPLE CUT ống rộng Menswear">
-            <h3>Quần Kaki Wide-leg SIMPLE CUT ống rộng Menswear</h3>
-            <p>Giá: xxxxxxđ</p>
-        </div>
+  <!-- SẢN PHẨM: ÁO -->
+  <section class="sanpham" id="ao">
+    <h2>Áo</h2>
+   <div class="sp">
+      <div class="sp-image">
+        <img src="images/ao1.jpg" alt="ANGER ISSUES HOODIE">
+      </div>
+      <h3>ANGER ISSUES HOODIE</h3>
+      <p>Giá: 3.200.000đ</p>
+      <button class="mua-btn">Mua ngay</button>
+      <button class="giohang-btn">Thêm vào giỏ</button>
+    </div>
+   <div class="sp">
+      <div class="sp-image">
+        <img src="images/ao2.jpg" alt="NON-PATHETICA T-SHIRT">
+      </div>
+      <h3>NON-PATHETICA T-SHIRT</h3>
+      <p>Giá: 700.000đ</p>
+      <button class="mua-btn">Mua ngay</button>
+      <button class="giohang-btn">Thêm vào giỏ</button>
+    </div>
+   <div class="sp">
+      <div class="sp-image">
+        <img src="images/ao3.jpg" alt="HUGDEALER TOP">
+      </div>
+      <h3>HUGDEALER TOP</h3>
+      <p>Giá: 2.650.000đ</p>
+      <button class="mua-btn">Mua ngay</button>
+      <button class="giohang-btn">Thêm vào giỏ</button>
+    </div>
+    <div class="sp">
+      <div class="sp-image">
+        <img src="images/ao4.jpg" alt="SWEVEN LEATHER JACKET">
+      </div>
+      <h3>SWEVEN LEATHER JACKET</h3>
+      <p>Giá: 2.100.000đ</p>
+      <button class="mua-btn">Mua ngay</button>
+      <button class="giohang-btn">Thêm vào giỏ</button>
+    </div>
+    <div class="sp">
+      <div class="sp-image">
+        <img src="images/ao5.jpg" alt="MELANCHOLIA T-SHIRT">
+      </div>
+      <h3>MELANCHOLIA T-SHIRT</h3>
+      <p>Giá: 750.000đ</p>
+      <button class="mua-btn">Mua ngay</button>
+      <button class="giohang-btn">Thêm vào giỏ</button>
+    </div>
+    <div class="sp">
+      <div class="sp-image">
+        <img src="images/ao6.jpg" alt="HYBRID-KID T-SHIRT">
+      </div>
+      <h3>HYBRID-KID T-SHIRT</h3>
+      <p>Giá: 790.000đ</p>
+      <button class="mua-btn">Mua ngay</button>
+      <button class="giohang-btn">Thêm vào giỏ</button>
+    </div>
+  </section>
+  <!-- PHỤ KIỆN -->
+  <section class="sanpham" id="phukien">
+    <h2>Phụ kiện</h2>
+    <div class="sp">
+      <div class="sp-image">
+        <img src="images/pk1.jpg" alt="JUNGLE TOTE CAMOUFLAGEDX">
+      </div>
+      <h3>JUNGLE TOTE CAMOUFLAGEDX</h3>
+      <p>Giá: 850.000đ</p>
+      <button class="mua-btn">Mua ngay</button>
+      <button class="giohang-btn">Thêm vào giỏ</button>
+    </div>
+    <div class="sp">
+      <div class="sp-image">
+        <img src="images/pk2.jpg" alt="PAUL'S PENDANT">
+      </div>
+      <h3>PAUL'S PENDANT</h3>
+      <p>Giá: 1.980.000đ</p>
+      <button class="mua-btn">Mua ngay</button>
+      <button class="giohang-btn">Thêm vào giỏ</button>
+    </div>
+    <div class="sp">
+      <div class="sp-image">
+        <img src="images/pk3.jpg" alt="ENAMEL PAINT KEYCHAIN">
+      </div>
+      <h3>ENAMEL PAINT KEYCHAIN</h3>
+      <p>Giá: 380.000đ</p>
+      <button class="mua-btn">Mua ngay</button>
+      <button class="giohang-btn">Thêm vào giỏ</button>
+    </div>
+    <div class="sp">
+      <div class="sp-image">
+        <img src="images/pk4.jpg" alt="CAMOUFLAGEDX BANADA">
+      </div>
+      <h3>CAMOUFLAGEDX BANADA</h3>
+      <p>Giá: 390.000đ</p>
+      <button class="mua-btn">Mua ngay</button>
+      <button class="giohang-btn">Thêm vào giỏ</button>
+    </div><div class="sp">
+      <div class="sp-image">
+        <img src="images/pk5.jpg" alt="COST 5 PANEL CAP">
+      </div>
+      <h3>COST 5 PANEL CAP</h3>
+      <p>Giá: 430.000đ</p>
+      <button class="mua-btn">Mua ngay</button>
+      <button class="giohang-btn">Thêm vào giỏ</button>
+    </div>
+    <!-- Thêm sản phẩm phụ kiện -->
+  </section>
+  
+  <!-- FOOTER -->
+  <footer id="lienhe">
+    <div class="social-icons">
+      <p><a href="https://www.facebook.com" target="_blank">
+        <img src="images/image.png" alt="Facebook" width="24"> Facebook
+      </a></p>
+      <p><a href="https://www.instagram.com/" target="_blank">
+        <img src="images/1.png" alt="Instagram" width="24"> Instagram
+      </a></p>
+    </div>
 
-       
-    </section>
-    
-    <footer>
-        <footer>
-        
-            <div class="social-icons">
-                <p><a href="https://www.facebook.com/DaCopyLinkNhungCuteNhatNha" target="_blank">
-                <img src="images/image.png" alt="Facebook" width="24"> Facebook
-                </a> </p>
-                <p><a href="https://www.instagram.com/fin3.17/" target="_blank">
-                <img src="images/1.png" alt="Instagram" width="24"> Instagram
-                </a> </p>
-                
-            </div>
-            
-            <div class="contact-info">
-                <p>📍 Địa chỉ: 5A Tống Văn Hên, p.15, q.Tân Bình, TP.HCM</p>
-                <p>📞 Điện thoại: 0865 273 872 </p>
-                <p>📧 Email: hipperoseclothes@gmail.com</p>
-                <p>&copy; 2025 HIPPEROSE'S CLOTHES SHOP </p>
-            </div>
-        </footer>
-        
-       
-    </footer>
+    <div class="contact-info">
+      <p>📍 Địa chỉ: 5A Tống Văn Hên, p.15, q.Tân Bình, TP.HCM</p>
+      <p>📞 Điện thoại: 0865 273 872 </p>
+      <p>📧 Email: hipperoseclothes@gmail.com</p>
+      <p>&copy; 2025 HIPPEROSE'S CLOTHES SHOP </p>
+    </div>
+  </footer>
+
 </body>
 </html>

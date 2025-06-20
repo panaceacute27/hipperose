@@ -1,77 +1,262 @@
 body {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif; /* Chọn font chữ */
+  margin: 0; /* Xóa khoảng trắng bên ngoài */
+  padding: 0; /* Xóa khoảng trắng bên trong */
+  background-color: #ffffff; /* Màu nền trắng */
 }
 
+/* ===== HEADER ===== */
 header {
- 
-    background-color: #333;
-    color: #fafafa;
-    padding: 20px 0;
-    text-align: center;
+  background-color: #000000; /* Nền màu xám đậm */
+  color: #de0b71; /* Màu chữ hồng đậm */
+  padding: 20px 0; /* Trên & dưới: 20px, trái phải: 0 */
+  text-align: center; /* Căn giữa chữ */
+  position: relative; /* Đặt vị trí tương đối để định vị phần tử con (nếu cần) */
+}
+.logo-container {
+  display: inline-block;     /* Để căn giữa theo text-align */
+  text-align: left ;          /* Căn trái logo và chữ bên trong */
 }
 
-.products {
-    width: 90%;
-    margin: 20px auto;
-    overflow: hidden; 
+.logo1 {
+  width: 125px;
+  height: auto;
+  vertical-align: middle;    /* Canh giữa logo với chữ */
+  display: inline-block;
+}
+.logo2 {
+  width: 300px;
+  height: auto;
+  vertical-align: middle;    /* Canh giữa logo với chữ */
+  display: inline-block;
+  
+}
+.logo-container h1 {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px;
+  font-size: 0px;
+  color: #de0b71;
+}
+#logo-hoa {
+  position: fixed;
+  top: 15%;
+  right:0%;
+  transform: translate(-50%, -50%);
+  opacity: 0.3;
+  z-index: 1;
+  pointer-events: none; /* Không ảnh hưởng đến click */
+  mix-blend-mode: multiply; 
+  transition: opacity 0.5s ease;
+}
+#logo-hoa img {
+  width: 150px;
+  height: auto;
+}
+/* --- Điều chỉnh logo khi trên điện thoại --- */
+@media (max-width: 600px) {
+  .logo1 {
+    width: 80px;
+  }
+
+  .logo2 {
+    width: 180px;
+  }
+
+  #logo-hoa img {
+    width: 100px;
+  }
+
+  #logo-hoa {
+    top: 20%; /* hạ xuống chút cho dễ nhìn */
+    right: 0%;
+    transform: translate(-30%, -50%);
+    opacity: 0.15;
+  }
 }
 
-.product {
-    width: 30%;
-    margin: 1.66%;
-    float: left;
-    background-color: #fff;
-    border: 2px solid #000000;
-    border-radius: 8px;
-    transition: border-color 0.3s ease, border-radius 0.3s ease;
-    text-align: center;
-    padding: 10px;
-    box-sizing: border-box;
-}
-.product:hover{
-    border-color:rgb(255, 0, 0);
-    border-radius: 20px;
+/* ===== MENU 3 GẠCH ===== */
+#menu-toggle {
+  display: none; /* Ẩn checkbox menu */
 }
 
-.product img {
-    width: 100%;
-    height: auto;
+.menu-icon {
+  width: 30px; /* Chiều rộng biểu tượng */
+  cursor: pointer; /* Hiển thị hình bàn tay khi hover */
+  position: absolute; /* Định vị tuyệt đối so với thẻ cha có position */
+  top: 65px; /* Cách top 45px */
+  left: 100px; /* Cách trái 20px */
+  z-index: 1001; /* Đảm bảo menu-icon nằm trên các phần tử khác */
 }
 
+.menu-icon span {
+  display: block; /* Hiển thị như khối */
+  height: 3px; /* Chiều cao mỗi thanh ngang */
+  background: #eee; /* Màu trắng */
+  margin: 6px 0; /* Khoảng cách dọc giữa các thanh */
+  transition: 0.4s; /* Hiệu ứng chuyển động */
+}
+
+/* ===== MENU TRƯỢT TỪ TRÁI ===== */
+.menu {
+  position: fixed; /* Giữ cố định menu khi cuộn trang */
+  top: 0; /* Dính sát trên */
+  left: -250px; /* Ẩn menu khỏi màn hình (bên trái) */
+  width: 250px; /* Chiều rộng menu */
+  height: 100%; /* Chiều cao 100% màn hình */
+  background-color: #eee; /* Màu nền xám nhạt */
+  padding-top: 60px; /* Đẩy nội dung menu xuống dưới */
+  text-align: left; /* Căn trái nội dung */
+  transition: left 0.4s ease; /* Hiệu ứng trượt menu */
+  z-index: 1002; /* Nằm trên các thành phần khác */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Bóng bên phải menu */
+}
+
+.menu a {
+  display: block; /* Mỗi link chiếm 1 dòng */
+  text-decoration: none; /* Bỏ gạch chân */
+  color: #333; /* Màu chữ xám đậm */
+  padding: 15px 20px; /* Lề trong */
+  font-weight: bold; /* Chữ đậm */
+  border-bottom: 1px solid #ccc; /* Gạch chân mỗi mục */
+}
+
+/* ===== KHI CHECKED MỚI HIỆN MENU ===== */
+#menu-toggle:checked ~ .menu {
+  left: 0; /* Khi checkbox được chọn, hiện menu ra */
+}
+
+/* ===== DẤU X ĐÓNG MENU ===== */
+.close-icon {
+  display: block; /* Hiển thị dấu X */
+  font-size: 24px; /* Kích thước lớn */
+  color: #333; /* Màu đậm */
+  position: absolute; /* Định vị bên trong menu */
+  top: 15px; /* Cách trên */
+  right: 15px; /* Cách phải */
+  cursor: pointer; /* Đổi chuột thành bàn tay */
+  background-color: transparent; /* Nền trong suốt */
+  padding: 5px 10px; /* Khoảng cách bên trong */
+  border: none; /* Không viền */
+}
+
+/* Khi menu được mở thì hiện nút X */
+#menu-toggle:checked ~ .close-icon {
+  display: block;
+}
+
+/* ===== SẢN PHẨM ===== */
+.sanpham {
+  width: 90%; /* Chiếm 90% chiều rộng */
+  margin: 30px auto; /* Căn giữa + khoảng cách trên dưới */
+  overflow: hidden; /* Ẩn phần dư */
+}
+
+.sanpham::after {
+  content: ""; /* Tạo phần tử giả để clear float */
+  display: table;
+  clear: both;
+}
+
+.sp {
+  float: left; /* Sắp xếp sản phẩm ngang hàng */
+  width: 30%; /* Chiếm 30% mỗi sản phẩm */
+  margin: 1.66%; /* Khoảng cách giữa các sản phẩm */
+  background-color: #fff; /* Nền trắng */
+  border: 2px solid #333; /* Viền đen */
+  border-radius: 8px; /* Bo góc */
+  text-align: center; /* Căn giữa nội dung */
+  padding: 10px; /* Lề trong */
+  box-sizing: border-box; /* Tính cả padding vào width */
+  height: auto; /* Tự động chiều cao */
+  cursor: pointer; /* Đổi chuột */
+  transition: border-color 0.3s ease, border-radius 0.3s ease; /* Hiệu ứng hover */
+}
+
+.sp:hover {
+  border-color: #de0b71; /* Đổi màu viền khi hover */
+  border-radius: 20px; /* Bo góc hơn khi hover */
+}
+
+.sp-image {
+  width: 100%; /* Chiều rộng tối đa */
+  height: 500px; /* Chiều cao cố định */
+  overflow: hidden; /* Ẩn phần hình vượt quá */
+  border-radius: 6px; /* Bo góc ảnh */
+}
+
+.sp-image img {
+  width: 100%; /* Hình ảnh co theo khung */
+  height: 100%;
+  object-fit: cover; /* Cắt ảnh để vừa khung */
+  display: block; /* Không có khoảng trống dư */
+}
+
+/* ===== NÚT ===== */
+button {
+  padding: 10px 20px; /* Kích thước nút */
+  margin: 5px; /* Khoảng cách giữa các nút */
+  font-size: 16px;
+  border: none; /* Bỏ viền */
+  border-radius: 6px; /* Bo góc */
+  cursor: pointer; /* Chuột bàn tay */
+}
+
+.mua-btn {
+  background-color: #de0b71; /* Màu hồng */
+  color: white; /* Chữ trắng */
+}
+
+.giohang-btn {
+  background-color: #333; /* Màu đen */
+  color: white;
+}
+
+button:hover {
+  opacity: 0.8; /* Mờ nhẹ khi hover */
+}
+
+/* ===== FOOTER ===== */
 footer {
-    clear: both;
-    background-color: #ddd;
-    text-align: center;
-    padding: 15px;
-}
-footer {
-    clear: both;
-    background-color: #ddd;
-    text-align: left;
-    padding: 20px;
-    font-size: 14px;
-    color: #333;
+  clear: both; /* Clear float */
+  background-color: #ddd; /* Màu nền xám nhạt */
+  text-align: left; /* Căn trái nội dung */
+  padding: 20px; /* Khoảng cách trong */
+  font-size: 14px;
+  color: #333;
 }
 
 footer .contact-info {
-    margin-top: 10px;
+  margin-top: 10px;
 }
+
 .social-icons {
-    text-align: left;
-    margin-top: 15px;
+  text-align: left;
+  margin-top: 15px;
 }
 
 .social-icons a {
-    text-decoration: none;
-    color: #333;
-    margin: 0 10px;
-    font-size: 16px;
+  text-decoration: none;  /* bỏ gạch chân dưới liên kết  */
+  color: #333;
+  margin: 0 10px 0 0;
+  font-size: 16px;
 }
 
 .social-icons img {
-    vertical-align: middle;
-    margin-right: 5px;
+  vertical-align: middle; /* Căn hình ảnh theo giữa dòng */
+  margin-right: 5px;
+}
+
+/* ===== RESPONSIVE (khi màn hình nhỏ) ===== */
+@media (max-width: 768px) {
+  .sp  {
+    float: none; /* Không nằm cạnh nhau */
+    width: 100%; /* Chiếm toàn bộ chiều ngang */
+    margin: 10px 0;
+  }
+
+  .menu-icon {
+    top: 45px; /* Đưa biểu tượng lên cao hơn chút */
+    left: 15px;
+  }
 }
